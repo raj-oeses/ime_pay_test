@@ -14,7 +14,10 @@ class StockBloc extends Bloc<StockEvent, StockState> {
       try {
         await ShareDataRepo().getData().then((value) => value?.fold(
             (ifLeft) => emit(StockError(ifLeft.reason)),
-            (r) => emit(StockLoaded(r.data?.dayData, r, event.interval))));
+            (r) => emit(StockLoaded(
+                stockData: r.data?.dayData,
+                totalData: r,
+                selectedInterval: event.interval))));
       } catch (e) {
         print('Exceptio:::::::::________$e');
         emit(StockError(e.toString()));
@@ -44,7 +47,10 @@ class StockBloc extends Bloc<StockEvent, StockState> {
         default:
           dataList = [];
       }
-      emit(StockLoaded(dataList, event.totalData, event.changedEvent));
+      emit(StockLoaded(
+          stockData: dataList,
+          totalData: event.totalData,
+          selectedInterval: event.changedEvent));
     });
   }
 }

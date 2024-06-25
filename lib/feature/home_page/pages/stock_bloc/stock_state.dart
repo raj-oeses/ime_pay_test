@@ -18,17 +18,8 @@ class StockLoaded extends StockState {
   final ShareDataModel? totalData;
   final String selectedInterval;
 
-  const StockLoaded(this.stockData, this.totalData, this.selectedInterval);
-  StockLoaded copyWith({
-    List<Datum>? stockData,
-    ShareDataModel? totalData,
-    String? selectedInterval
-  }) {
-    return StockLoaded(
-      stockData ?? this.stockData,
-      totalData ?? this.totalData,
-       selectedInterval ?? this.selectedInterval,
-    );}
+  const StockLoaded(
+      {this.stockData, this.totalData, required this.selectedInterval});
 }
 
 class StockError extends StockState {

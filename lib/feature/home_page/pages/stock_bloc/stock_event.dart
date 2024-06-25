@@ -24,4 +24,5 @@ class IntervalChange extends StockEvent {
   final ShareDataModel? totalData;
 
   const IntervalChange(this.changedEvent, this.totalData);
+
 }
