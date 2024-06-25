@@ -3,11 +3,10 @@
 ## Overview
 
 This `README.md` file provides a comprehensive overview of the project, including its features,
-directory structure, workflow, and instructions for setting up and running the project. This
-application displays a stock chart with various time intervals (Min, Hourly, Daily, Monthly, Yearly)
-using the Bloc architecture. 
+directory structure, workflow, and instructions for setting up and running the project. 
 
-It features an interactive line chart that displays real-time stock
+This application displays a stock chart with various time intervals (Min, Hourly, Daily, Monthly, Yearly)
+using the Bloc architecture. It features an interactive line chart that displays real-time stock
 data fetched from a mock API. Users can interact with the chart using touch gestures to see detailed
 information, zoom in, and pan.
 
@@ -23,12 +22,28 @@ information, zoom in, and pan.
 - Display of essential stock information such as current price, price change, and percentage change.
 
 ## Project Structure
-
-lib/ |-- blocs/ | |-- stock_bloc.dart | |-- stock_event.dart | |-- stock_state.dart | |-- models/ |
-|-- share_data_model.dart | |-- repositories/ | |-- share_data_repo.dart | |-- screens/ | |--
-home_page.dart | |-- main.dart | test/ |-- blocs/ | |-- stock_bloc_test.dart |-- repositories/ | |--
-stock_repository_test.dart
-
+lib/
+|-- blocs/
+|   |-- stock_bloc.dart
+|   |-- stock_event.dart
+|   |-- stock_state.dart
+|
+|-- models/
+|   |-- share_data_model.dart
+|
+|-- repositories/
+|   |-- share_data_repo.dart
+|
+|-- screens/
+|   |-- home_page.dart
+|
+|-- main.dart
+|
+test/
+|-- blocs/
+|   |-- stock_bloc_test.dart
+|-- repositories/
+|   |-- stock_repository_test.dart
 ### WorkFlow
 
 - Bloc
