@@ -2,8 +2,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ime_pay_test/feature/home_page/data/model/share_data_model.dart';
 import 'package:ime_pay_test/feature/home_page/data/share_data_repo/share_data_repo.dart';
-import '../../../../core/constants/demo_data.dart';
-import '../../domain/i_home_repo/i_share_data_repo.dart';
+
 import 'stock_event.dart';
 import 'stock_state.dart';
 
@@ -24,9 +23,7 @@ class StockBloc extends Bloc<StockEvent, StockState> {
 
     //On IntervalChange
     on<IntervalChange>((event, emit) {
-      print('Interval----- ${event.changedEvent}');
       emit(StockLoading());
-      Future.delayed(const Duration(seconds: 1));
       List<Datum>? dataList;
       switch (event.changedEvent) {
         case 'min':
